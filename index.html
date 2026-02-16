@@ -16,6 +16,43 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* ===== EXPERIENCE TIMELINE ===== */
+.timeline{
+    position:relative;
+    margin-top:20px;
+    padding-left:30px;
+}
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#38bdf8;
+}
+.timeline-item{
+    position:relative;
+    margin-bottom:25px;
+    padding:15px 18px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:14px;
+}
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-27px;
+    top:22px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#38bdf8;
+}
+.timeline-date{font-size:13px;color:#94a3b8;margin-bottom:5px;}
+.timeline-item h3{color:#38bdf8;font-size:18px;}
+.timeline-item p{margin-top:6px;color:#d1d5db;font-size:14px;line-height:1.6;}
+
 html{scroll-behavior:smooth;}
 
 body{
@@ -24,7 +61,6 @@ body{
     overflow-x:hidden;
 }
 
-/* ===== BACKGROUND GLOW ===== */
 body::before, body::after{
     content:"";
     position:fixed;
@@ -34,18 +70,10 @@ body::before, body::after{
     filter:blur(120px);
     z-index:-1;
 }
-body::before{
-    background:#0ea5e9;
-    top:-150px;
-    left:-130px;
-}
-body::after{
-    background:#8b5cf6;
-    bottom:-150px;
-    right:-130px;
-}
+body::before{background:#0ea5e9;top:-150px;left:-130px;}
+body::after{background:#8b5cf6;bottom:-150px;right:-130px;}
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
     position:fixed;
     width:100%;
@@ -59,24 +87,12 @@ nav{
     border-bottom:1px solid rgba(255,255,255,.08);
     z-index:1000;
 }
-nav h2{
-    color:#38bdf8;
-    font-weight:700;
-}
-nav div{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-    transition:.3s;
-}
+nav h2{color:#38bdf8;}
+nav div{display:flex;gap:14px;flex-wrap:wrap;}
+nav a{color:white;text-decoration:none;font-size:14px;}
 nav a:hover{color:#38bdf8;}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
     min-height:95vh;
     display:flex;
@@ -105,9 +121,7 @@ nav a:hover{color:#38bdf8;}
     line-height:1.7;
 }
 
-.hero-buttons{
-    margin-top:25px;
-}
+.hero-buttons{margin-top:25px;}
 .hero-buttons a{
     display:inline-block;
     margin-right:10px;
@@ -118,13 +132,9 @@ nav a:hover{color:#38bdf8;}
     border-radius:10px;
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
-}
-.hero-buttons a:hover{
-    transform:translateY(-3px);
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{padding:65px 8%;}
 .section-title{
     font-size:2rem;
@@ -132,28 +142,23 @@ section{padding:65px 8%;}
     margin-bottom:22px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,.1);
     border-radius:16px;
     padding:20px;
     margin-bottom:14px;
-    transition:.3s;
-}
-.card:hover{
-    transform:translateY(-4px);
-    border-color:#38bdf8;
 }
 
-/* ===== SKILLS ===== */
+/* SKILLS */
 .skills{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:14px;
 }
 
-/* ===== PROJECTS ===== */
+/* PROJECTS */
 .projects{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -165,24 +170,9 @@ section{padding:65px 8%;}
     border:1px solid rgba(255,255,255,.15);
     border-radius:18px;
     padding:20px;
-    transition:.35s;
 }
-.project-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 30px rgba(56,189,248,.35);
-}
-
-.project-card h3{
-    color:#38bdf8;
-    margin-bottom:8px;
-}
-
-.project-card p{
-    color:#d1d5db;
-    font-size:14px;
-    line-height:1.6;
-}
-
+.project-card h3{color:#38bdf8;margin-bottom:8px;}
+.project-card p{color:#d1d5db;font-size:14px;line-height:1.6;}
 .project-card a{
     display:inline-block;
     margin-top:12px;
@@ -194,21 +184,14 @@ section{padding:65px 8%;}
     text-decoration:none;
 }
 
-/* ===== FOOTER ===== */
-footer{
-    text-align:center;
-    padding:25px;
-    color:#94a3b8;
-}
+/* FOOTER */
+footer{text-align:center;padding:25px;color:#94a3b8;}
 
-/* ===== MOBILE ===== */
 @media(max-width:992px){
     .projects{grid-template-columns:repeat(2,1fr);}
-    #typing-text{font-size:2.3rem;}
 }
 @media(max-width:600px){
     .projects{grid-template-columns:1fr;}
-    section{padding:50px 6%;}
     #typing-text{font-size:2rem;}
 }
 
@@ -225,6 +208,7 @@ footer{
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -236,8 +220,7 @@ footer{
 
 <p>
 AI/ML Engineer focused on building real-world intelligent systems using Machine Learning,
-NLP, Data Analytics, and AI-powered web applications. Passionate about deploying
-production-ready ML solutions and solving impactful problems.
+NLP, Data Analytics, and AI-powered web applications.
 </p>
 
 <div class="hero-buttons">
@@ -253,8 +236,8 @@ production-ready ML solutions and solving impactful problems.
 <h2 class="section-title">About Me</h2>
 <div class="card">
 Engineering student and aspiring AI/ML Engineer with hands-on experience in machine learning,
-NLP applications, predictive modeling, data analysis, and deploying AI projects using Streamlit and Python.
-Focused on building practical AI systems that combine strong backend logic with clean UI.
+NLP applications, predictive modeling, and deployment using Python and Streamlit.
+Focused on building practical AI systems with clean backend logic and real-world impact.
 </div>
 </section>
 
@@ -263,9 +246,9 @@ Focused on building practical AI systems that combine strong backend logic with 
 <h2 class="section-title">Skills</h2>
 <div class="skills">
 <div class="card">Python • NumPy • Pandas • Scikit-learn</div>
-<div class="card">TensorFlow • Keras • Deep Learning Basics</div>
-<div class="card">NLP • Text Processing • Sentiment Analysis</div>
-<div class="card">ML Pipelines • Feature Engineering • Model Evaluation</div>
+<div class="card">TensorFlow • Keras • LSTM</div>
+<div class="card">NLP • Sentiment Analysis • Text Processing</div>
+<div class="card">ML Pipelines • Feature Engineering • Evaluation</div>
 <div class="card">FastAPI • Flask • REST APIs</div>
 <div class="card">SQL • Data Cleaning • Visualization</div>
 </div>
@@ -274,9 +257,27 @@ Focused on building practical AI systems that combine strong backend logic with 
 <!-- EXPERIENCE -->
 <section id="experience">
 <h2 class="section-title">Experience</h2>
-<div class="card"><b>AI Trainee Engineer — Inventeron Technologies</b></div>
-<div class="card"><b>AI/ML Intern — Asvix AI Startup</b></div>
-<div class="card"><b>AI Intern — Infosys SpringBoard</b></div>
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-date">Feb 2026 – Present</div>
+<h3>AI Trainee Engineer — Inventeron Technologies</h3>
+<p>Working on AI/ML workflows, data preprocessing pipelines, and model experimentation.</p>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Jan 2026 – Present (Part-time)</div>
+<h3>AI/ML Intern — Asvix AI Startup</h3>
+<p>Built ML models and NLP-based solutions for real-world AI applications.</p>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Aug 2025 – Oct 2025</div>
+<h3>AI Intern — Infosys SpringBoard</h3>
+<p>Worked on foundational machine learning and data analytics projects.</p>
+</div>
+
+</div>
 </section>
 
 <!-- PROJECTS -->
@@ -287,50 +288,66 @@ Focused on building practical AI systems that combine strong backend logic with 
 
 <div class="project-card">
 <h3>Mental Health AI Assistant</h3>
-<p>NLP-powered sentiment analysis platform providing emotional insights and AI-driven support responses.</p>
+<p>NLP-based AI system designed for sentiment analysis and emotionally aware conversational support using real-world text data.</p>
 <a href="https://mindmatee-obrv.onrender.com/" target="_blank">Live Demo</a>
 </div>
 
 <div class="project-card">
 <h3>Heart Disease Prediction System</h3>
-<p>End-to-end ML pipeline for healthcare risk prediction with preprocessing, model training, and deployment.</p>
+<p>Machine learning pipeline developed for healthcare risk prediction including preprocessing, training, and deployment.</p>
 <a href="https://9umaaw8pc34qod5piqr7zn.streamlit.app/" target="_blank">Live Demo</a>
 </div>
 
 <div class="project-card">
 <h3>Human Activity Recognition</h3>
-<p>Machine learning model classifying physical activities using sensor data and intelligent pattern recognition.</p>
+<p>ML classification model using sensor data to recognize human physical activities through pattern learning.</p>
 <a href="https://fyvy7fwzjqzdzaaapjdrtv.streamlit.app/" target="_blank">Live Demo</a>
 </div>
 
 <div class="project-card">
 <h3>Mini Games Zone</h3>
-<p>
-Interactive web-based mini games built using HTML, CSS & JavaScript.
-Designed to improve user engagement, UI interactions, and logic-building skills
-with responsive layouts and smooth gameplay experience.
-</p>
+<p>Interactive web-based mini games built using HTML, CSS, and JavaScript to improve engagement and UI interaction.</p>
 <a href="https://starlit-malabi-ed37a3.netlify.app/" target="_blank">Live Demo</a>
 </div>
 
 <div class="project-card">
-<h3>Stock Market Predictor (LSTM + Moving Average)</h3>
-<p>
-Time-series forecasting project using LSTM neural networks and Moving Average (MA)
-analysis to predict stock price trends. Includes data preprocessing, visualization,
-sequence modeling, and interactive prediction dashboard built with Streamlit.
-</p>
+<h3>Stock Market Predictor (LSTM + MA)</h3>
+<p>Time-series forecasting project using LSTM neural networks and Moving Average techniques for stock trend prediction.</p>
 <a href="https://stock-market-predictor-ma6bhigbuwmaia3abunevf.streamlit.app/" target="_blank">Live Demo</a>
 </div>
 
-
 <div class="project-card">
 <h3>AI Productivity Dashboard</h3>
-<p>Interactive Streamlit dashboard for data visualization, ML insights, and intelligent decision support.</p>
+<p>Streamlit-based dashboard integrating ML insights and data visualization for interactive decision support.</p>
 <a href="#">Coming Soon</a>
 </div>
 
 </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+<h2 class="section-title">Publications</h2>
+
+<div class="card">
+<h3 style="color:#38bdf8;">Leveraging Artificial Intelligence and Machine Learning for Optimization in Wireless Communication and Networks</h3>
+<p style="color:#d1d5db;line-height:1.6;">
+Research paper exploring AI and ML techniques for optimizing wireless communication systems and improving network efficiency.
+</p>
+<a href="https://ieeexplore.ieee.org/document/11076952/" target="_blank"
+style="display:inline-block;margin-top:12px;padding:8px 14px;background:#38bdf8;color:#0b1120;border-radius:8px;text-decoration:none;font-weight:600;">
+View Publication
+</a>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">Empathetic AI Chatbot for Mental Health Support (Publication in Process)</h3>
+<p style="color:#d1d5db;line-height:1.6;">
+NLP-based empathetic chatbot using sentiment analysis and context understanding for emotionally aware conversational support.
+Currently in the process of being published.
+</p>
+</div>
+
 </section>
 
 <!-- CONTACT -->
@@ -348,7 +365,6 @@ sequence modeling, and interactive prediction dashboard built with Streamlit.
 const text=`Hi, I'm <span>Shashwati B U</span><br>AI/ML Engineer`;
 const typingElement=document.getElementById("typing-text");
 let i=0;
-
 function typeEffect(){
  if(i<text.length){
   typingElement.innerHTML=text.substring(0,i+1)+'<span class="cursor"></span>';
